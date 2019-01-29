@@ -43,7 +43,7 @@ echo "$current_heads" |
     fi
 
     prev_ref=$(jq -r '.version | .[$branch]' --arg branch "$branch" < $payload)
-    if [ "$prev_ref" = "" ]; then
+    if [ "$prev_ref" = "null" ]; then
       echo "$branch"
     fi
   done |
